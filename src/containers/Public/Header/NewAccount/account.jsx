@@ -1,7 +1,8 @@
 import 'antd/dist/antd.css';
 import React, {useState} from 'react';
 import { 
-    Modal,  
+    Modal,
+    Tooltip,  
     Form, 
     Button, 
     Col, 
@@ -56,40 +57,42 @@ const Account = () => {
           
           <Form layout="vertical" hideRequiredMark>
             <Row gutter={16}>
-              <Col span={24}>
+              <Col span={24}>  
                 <Form.Item
                   name="name"
                   label="Username"
                   rules={[{ required: true, message: 'Please enter user name' }]}
                 >
-                  <Input placeholder="Please enter user name" />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row>  
-              <Col span={24}>
-                <Row>
-                <Col span={24}>     
-                <Form.Item
-                  name="password"
-                  label="Password"
+                <Tooltip 
+                  placement="top" 
+                  title='Под этим именем вас будут знать другие пользователи ресурса.'
+                  color='#2db7f5'
+                  trigger='click'
                   
                 >
-                <Progress
-                style={{
-                    width: 200
-                }}/>
+                  <Input placeholder="Please enter user name" />
+                </Tooltip>
                 </Form.Item>
-                </Col>
-                </Row>
-                  <Input.Password
-
-                    style={{ width: '100%' }}
-                    type='password'
-                  />
-                
               </Col>
             </Row>
+            <Form.Item>
+
+                <Row style={{marginBottom: '8px'}}>
+                <Col flex="auto" style={{textAlign: 'left'}}>  
+                  Password
+                </Col>
+
+                <Col flex="150px"> 
+                  <Progress style={{ width: 150 }}></Progress>
+                </Col>
+                </Row>
+
+                <Input.Password
+                  style={{ width: '100%' }}
+                  type='password'
+                />
+
+            </Form.Item>
             <Row>
               <Col span={24}>
                 <Form.Item
@@ -110,55 +113,48 @@ const Account = () => {
                   name="type"
                   label="Birthday"
                 >
-                    <div
-                        className="registration" 
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                        }}
-                    >
+                  <div
+                      className="registration" 
+                      style={{
+                          display: 'flex',
+                          flexDirection: 'row',
+                      }}
+                  >
           
-                            <InputNumber
-                                style={{ width: 150 }}
-                                placeholder="Day"
-
-                                maxLength='2'
-                            />
-
-
-
+                    <InputNumber
+                      style={{ width: 150 }}
+                      placeholder="Day"
+                      maxLength='2'
+                    />
        
-                            <Select placeholder="Month" style={{
-                                marginLeft: 15,
-                                width: "100%"
-                       
-                            }}>
-                                <Option>January</Option>
-                                <Option>February</Option>
-                                <Option>March</Option>
-                                <Option>April</Option>
-                                <Option>May</Option>
-                                <Option>June</Option>
-                                <Option>July</Option>
-                                <Option>August</Option>
-                                <Option>September</Option>
-                                <Option>October</Option>
-                                <Option>November</Option>
-                                <Option>December</Option>
-                            </Select>
+                    <Select placeholder="Month" style={{
+                        marginLeft: 15,
+                        width: "100%"
+                    }}>
+                      <Option>January</Option>
+                      <Option>February</Option>
+                      <Option>March</Option>
+                      <Option>April</Option>
+                      <Option>May</Option>
+                      <Option>June</Option>
+                      <Option>July</Option>
+                      <Option>August</Option>
+                      <Option>September</Option>
+                      <Option>October</Option>
+                      <Option>November</Option>
+                      <Option>December</Option>
+                    </Select>
                  
-        
-               
-                            <InputNumber
-                                style={{ 
-                                width: 150,
-                                marginLeft: 15,
-                                 }}
-                                placeholder="Year"
-                                maxLength='4'
-                            />
+                    <InputNumber
+                      style={{ 
+                        width: 150,
+                        marginLeft: 15,
+                      }}
+                      placeholder="Year"
+                      maxLength='4'
+                    />
 
-                    </div>
+                  </div>
                 </Form.Item>
               </Col>
             </Row>

@@ -82,7 +82,7 @@ class App extends React.Component  {
               trigger={null} 
               collapsible 
             >
-              <Lefty collapsed={this.state.collapsed}/>
+              <Lefty inlineCollapsed={this.state.collapsed}/>
             </Sider>
           {/* <Header className="site-layout-background" style={{ padding: 0, theme: "light" }}>
             {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
