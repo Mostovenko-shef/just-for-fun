@@ -2,13 +2,14 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import '../App.css'
 import Top from './Public/Header/top'
-import Lefty from './Public/Sider/lefty'
-import Main from './Public/Main/Main'
-import Second from './Public/Second/second'
+// import Lefty from './Public/Sider/lefty'
+import Main from './Public/Content/Main/Main'
+import Second from './Public/Content/Second/second'
 import Account from './Public/Header/NewAccount/account'
-import { Layout, Button } from 'antd';
+import Bottom from './Public/Footer/Bottom'
+import { Layout } from 'antd';
 
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider, Footer } = Layout;
 
 class App extends React.Component  {
     constructor(props) {
@@ -45,36 +46,9 @@ class App extends React.Component  {
     
     render() {
       return (
-    
-        // <Router>
-        // <Layout>
-        // <div>
-        //     <Header>
-        //       <Top />
-        //       <Switch>
-        //         <Route exact path="/" component={Main} />
-        //         <Route exact path="/second" component={Second} />
-        //       </Switch>
-        //     </Header>
 
-        //     <Layout>  
-        //     {/* <div style={{ display: 'flex' }}> */}
-        //       <Sider>
-        //         <Lefty/>
-        //       </Sider>
-        //     </Layout>
-        //     <Content>
-        //     {/* <Switch>
-        //         <Route exact path="/" component={Main} />
-        //         <Route exact path="/second" component={Second} />
-        //     </Switch> */}
-        //     </Content>
-        //     {/* </div> */}
-        // </div>
-        // </Layout>
-        // </Router>
       <Router>
-        <Layout>
+        {/* <Layout>
             <Sider 
               width={200} 
               height={1000} 
@@ -83,27 +57,13 @@ class App extends React.Component  {
               collapsible 
             >
               <Lefty inlineCollapsed={this.state.collapsed}/>
-            </Sider>
-          {/* <Header className="site-layout-background" style={{ padding: 0, theme: "light" }}>
-            {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: this.toggle,
-            })}
-           <Top/>
-          </Header> */}
-          <Layout>
-            <Header className="site-layout-background" style={{ padding: 0, theme: "dark" }}>
+        </Sider> */}
+         
+          <Layout> 
+            <Header className="site-layout-background" style={{ padding: 0 }}>
               <Top/>
             </Header>
-            {/* <Sider 
-              width={200} 
-              height={1000} 
-              className="site-layout-background"
-              trigger={null} 
-              collapsible 
-            >
-              <Lefty collapsed={this.state.collapsed}/>
-            </Sider> */}
+        
               <Content           
                 className="site-layout-background"
                 style={{
@@ -118,8 +78,10 @@ class App extends React.Component  {
                  <Route exact path="/newacc" component={Account} />
                </Switch> 
               </Content>
+              <Footer style={{padding:0, height: 101.76}}>
+                <Bottom/>
+              </Footer>
           </Layout>
-        </Layout>
       </Router>    
       )}
 }

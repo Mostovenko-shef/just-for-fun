@@ -1,5 +1,6 @@
 @import url('~antd/dist/antd.css');
 
+
 .App {
   font-family: 'Open Sans', sans-serif;
 }
@@ -20,7 +21,7 @@ img {
 }
 
 div .sidecontent {
-  height: 1000px;
+  height: 1300px;
   width: 200px;
   background: rgb(255, 255, 255)
 }
@@ -36,6 +37,10 @@ header button {
   height: 30px;
 }
 
+.right-btn:hover {
+opacity: .9;
+}
+
 .right-btn {
   display: flex;
   flex: 1;
@@ -45,6 +50,46 @@ header button {
 .registration {
   width: 100%
 }
+
+.instagram, .gith, .youtube {
+  color:whitesmoke;
+  transition-property: color; 
+  transition-duration: 0.7s;
+  transition-timing-function: ease-out; 
+}
+
+.instagram:hover, .gith:hover, .youtube:hover {
+  opacity: .8;
+  color: rgb(209, 203, 203);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.7s ease-out; 
+}
+
+.buttonSign {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-color:rgba(0, 0, 0, 0.85)
+}
+
+.buttonSign:hover {
+  color: rgba(0, 0, 0, 0.85);
+  background-color: white;
+  border-color: rgba(0, 0, 0, 0.85)
+}
+
+.bottomInfo {
+  width: 100%;
+}
+
+.information {
+  vertical-align: middle;
+}
+
+.main:hover {
+  color: rgb(216, 13, 13);
+
+}
+
+
 
 /* header {
   height: 100px;

@@ -1,9 +1,10 @@
 import React from 'react'
-import { Divider } from 'antd'
+import { Divider, Image } from 'antd'
+import Logo from '../../../../assets/wave.jpg'
 
 const Second = () => (
-  <div className='something'>
-   
+  <div className='something' style={{
+  }}>
     <Divider plain><h1>Vow of the Night's Watch</h1></Divider>
     <p>"Night gathers, and now my watch begins. It shall not end until my death. I shall take no wife, hold no lands, father no children. 
       I shall wear no crowns and win no glory. I shall live and die at my post. 

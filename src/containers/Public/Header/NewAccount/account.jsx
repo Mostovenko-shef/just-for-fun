@@ -2,18 +2,20 @@ import 'antd/dist/antd.css';
 import React, {useState} from 'react';
 import { 
     Modal,
-    Tooltip,  
-    Form, 
-    Button, 
-    Col, 
-    Row, 
-    Input, 
+    Button,
     Select, 
-    InputNumber, 
-    Progress  } from 'antd';
+    Tabs,
+    Row,
+    Col  
+    } from 'antd';
 import  { PlusOutlined } from '@ant-design/icons';
+import CreateAcc from './createAcc';
+import LogIn from './logIn';
+import Logo from '../../../../assets/vsco (1).svg'
+import Form from 'rc-field-form/es/Form';
 
 const { Option } = Select;
+const {TabPane} = Tabs;
 
 const Account = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -30,9 +32,10 @@ const Account = () => {
       setIsModalVisible(false);
     };
 
+
     return (
-      <>
-        <div className="right-btn">
+      <>  
+          <div className="right-btn">
             <Button 
                 type="default" 
                 onClick={showModal} 
@@ -40,138 +43,33 @@ const Account = () => {
                 icon={<PlusOutlined />}
                 style={{
                     marginTop: 17,
-                    float: 'right'
+                    marginRight: 15,
+                    float: 'right',
+                    borderWidth: 2,
+                    backgroundColor: 'black',
+                    borderColor: 'white',
+                    color: 'white'
                 }}
             >
             </Button>
-        </div>
+            </div>  
         <Modal 
-          title="Join our club"
-          style={{
-              textAlign: 'center'
-          }} 
-          onOk={handleOk} 
+          // onOk={handleOk} 
           visible={isModalVisible} 
           onCancel={handleCancel}
+          footer={null}
         >
-          
-          <Form layout="vertical" hideRequiredMark>
-            <Row gutter={16}>
-              <Col span={24}>  
-                <Form.Item
-                  name="name"
-                  label="Username"
-                  rules={[{ required: true, message: 'Please enter user name' }]}
-                >
-                <Tooltip 
-                  placement="top" 
-                  title='Под этим именем вас будут знать другие пользователи ресурса.'
-                  color='#2db7f5'
-                  trigger='click'
-                  
-                >
-                  <Input placeholder="Please enter user name" />
-                </Tooltip>
-                </Form.Item>
-              </Col>
-            </Row>
-            <Form.Item>
-
-                <Row style={{marginBottom: '8px'}}>
-                <Col flex="auto" style={{textAlign: 'left'}}>  
-                  Password
-                </Col>
-
-                <Col flex="150px"> 
-                  <Progress style={{ width: 150 }}></Progress>
-                </Col>
-                </Row>
-
-                <Input.Password
-                  style={{ width: '100%' }}
-                  type='password'
-                />
-
-            </Form.Item>
-            <Row>
-              <Col span={24}>
-                <Form.Item
-                  name="confirm password"
-                  label="Confirm password"
-                  rules={[{ required: true }]}
-                >
-                  <Input.Password
-                    style={{ width: '100%' }}
-                    type='password'
-                  />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row>  
-              <Col span={24}>
-                <Form.Item
-                  name="type"
-                  label="Birthday"
-                >
-                  <div
-                      className="registration" 
-                      style={{
-                          display: 'flex',
-                          flexDirection: 'row',
-                      }}
-                  >
-          
-                    <InputNumber
-                      style={{ width: 150 }}
-                      placeholder="Day"
-                      maxLength='2'
-                    />
-       
-                    <Select placeholder="Month" style={{
-                        marginLeft: 15,
-                        width: "100%"
-                    }}>
-                      <Option>January</Option>
-                      <Option>February</Option>
-                      <Option>March</Option>
-                      <Option>April</Option>
-                      <Option>May</Option>
-                      <Option>June</Option>
-                      <Option>July</Option>
-                      <Option>August</Option>
-                      <Option>September</Option>
-                      <Option>October</Option>
-                      <Option>November</Option>
-                      <Option>December</Option>
-                    </Select>
-                 
-                    <InputNumber
-                      style={{ 
-                        width: 150,
-                        marginLeft: 15,
-                      }}
-                      placeholder="Year"
-                      maxLength='4'
-                    />
-
-                  </div>
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={16}>
-              <Col span={24}>
-                <Form.Item
-                  name="approver"
-                  label="E-mail"
-                  rules={[{ required: true, message: 'Please provide a valid email address' }]}
-                >
-                    <Input/>
-                </Form.Item>
-              </Col>
-            </Row>
-          </Form>
+          <div style={{textAlign: 'center'}}> <h2 style={{margin: 0, textAlign: 'center'}}><img src={Logo} style={{width: 80, height: 60, margin: 0}}/>&nbsp;&nbsp;Join our club</h2> </div>
+          <Tabs style={{paddingTop:0}}>
+          <TabPane  className="login" tab="Login" key='1'>
+            <LogIn/>
+          </TabPane>
+          <TabPane className="signup"  tab="Create  new account " key="2">
+            <CreateAcc/>
+          </TabPane>
+          </Tabs>
         </Modal>
-      </>
+      </>  
     );
 }
 

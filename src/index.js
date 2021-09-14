@@ -6,6 +6,7 @@ import { ConfigProvider } from 'antd';
 import ruRU from 'antd/lib/locale/ru_RU'
 
 
+
 ReactDOM.render(
 
   <ConfigProvider locale={ruRU}>

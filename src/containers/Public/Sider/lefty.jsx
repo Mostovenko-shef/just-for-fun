@@ -16,26 +16,45 @@ class Lefty extends React.Component {
     render() {
     return (    
     <div className="sidecontent">
-            <div className="buttonTop">
-            <Button type="primary" onClick={this.toggleCollapsed} style={{  }}>
+           
+            <Button type="primary" onClick={this.toggleCollapsed} style={{ marginTop: 4, marginLeft: 4 }}>
               {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               onClick: this.toggle,
             })}
             </Button>
-          </div>
+    
           <Menu
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
             mode="inline"
             theme="light"
+            inlineCollapsed={this.state.collapsed}
           >
-            <Menu.Item>
+            <Menu.Item key="1">
               <div class="sidebar">
                   <h3><NotificationOutlined />&nbsp;Search</h3>
               </div>
             </Menu.Item>  
-            <Menu.Item>
+            <Menu.Item key="2">
+              <div class="sidebar">
+                  <h3><LoginOutlined />&nbsp;Log in</h3>
+             </div>
+            </Menu.Item>
+            <Menu.Item key="3">
+              <div class="sidebar">
+                  <h3><LoginOutlined />&nbsp;Log in</h3>
+             </div>
+            </Menu.Item>
+            <Menu.Item key="4"> 
+              <div class="sidebar">
+                  <h3><LoginOutlined />&nbsp;Log in</h3>
+             </div>
+            </Menu.Item>
+            <Menu.Item key="5">
+              <div class="sidebar">
+                  <h3><LoginOutlined />&nbsp;Log in</h3>
+             </div>
+            </Menu.Item>
+            <Menu.Item key="6">
               <div class="sidebar">
                   <h3><LoginOutlined />&nbsp;Log in</h3>
              </div>
