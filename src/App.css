@@ -84,9 +84,52 @@ opacity: .9;
   vertical-align: middle;
 }
 
-.main:hover {
-  color: rgb(216, 13, 13);
+.slideOne {
+  background-image: url('./assets/wave.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 
+.slideTwo {
+  background-image: url('https://i.imgur.com/mi5GVur.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.two {background: linear-gradient( to left, 
+rgba(0, 0, 0, 0),
+rgba(0, 0, 0, 0.8));}
+
+.textTwo {
+  width: 220px;
+  margin-left: 30px;
+  padding-top: 67px;
+  padding-bottom: 80px;
+  font-family:'Saira Condensed', sans-serif;
+  font-size: 20px;
+}
+
+.textTwo button {
+  width: auto;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: rgb(255, 255, 255);
+  border-color:rgba(0, 0, 0, 0.85);
+  border-width:thin;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-out; 
+}
+
+.textTwo button:hover {
+  width: auto;
+  color: whitesmoke;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: unset;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out; 
+}
+
+.site-card-wrapper {
+  margin: 0px 20px;
 }
 
 

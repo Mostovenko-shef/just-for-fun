@@ -12,7 +12,7 @@ import  { PlusOutlined } from '@ant-design/icons';
 import CreateAcc from './createAcc';
 import LogIn from './logIn';
 import Logo from '../../../../assets/vsco (1).svg'
-import Form from 'rc-field-form/es/Form';
+
 
 const { Option } = Select;
 const {TabPane} = Tabs;
@@ -22,10 +22,6 @@ const Account = () => {
   
     const showModal = () => {
       setIsModalVisible(true);
-    };
-  
-    const handleOk = () => {
-      setIsModalVisible(false);
     };
   
     const handleCancel = () => {
@@ -54,7 +50,6 @@ const Account = () => {
             </Button>
             </div>  
         <Modal 
-          // onOk={handleOk} 
           visible={isModalVisible} 
           onCancel={handleCancel}
           footer={null}

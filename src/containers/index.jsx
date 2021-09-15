@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import '../App.css'
 import Top from './Public/Header/top'
-// import Lefty from './Public/Sider/lefty'
+import Lefty from './Public/Sider/lefty'
 import Main from './Public/Content/Main/Main'
 import Second from './Public/Content/Second/second'
 import Account from './Public/Header/NewAccount/account'
@@ -63,11 +63,11 @@ class App extends React.Component  {
             <Header className="site-layout-background" style={{ padding: 0 }}>
               <Top/>
             </Header>
-        
+            
               <Content           
                 className="site-layout-background"
                 style={{
-                  padding: 24,
+                  
                   margin: 0,
                   minHeight: 1080,
                 }}
@@ -78,6 +78,7 @@ class App extends React.Component  {
                  <Route exact path="/newacc" component={Account} />
                </Switch> 
               </Content>
+            
               <Footer style={{padding:0, height: 101.76}}>
                 <Bottom/>
               </Footer>

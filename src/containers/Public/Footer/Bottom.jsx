@@ -14,7 +14,6 @@ render() {
                     <span style={{
                         fontSize: 14,
                         color: 'whitesmoke',
-               
                     }}>
                          © 2021 Mostovenko, Inc. All rights reserved.
                     </span>
